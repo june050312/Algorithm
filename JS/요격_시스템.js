@@ -13,6 +13,31 @@ targets.forEach(target => {
     }
 });
 
+let cnt = 0
+while(1) {
+    let flag = 0
+    field.forEach(element => {
+        flag += element
+    });
+    if (flag == 0) {
+        break
+    }
 
+    let removes = []
+    let pos = field.indexOf(Math.max(...field)) + 1.5
 
-console.log(field);
+    targets.forEach(target => {
+        if (target[0] < pos && pos < target[1]) {
+            removes.push(target)
+        }
+    });
+
+    removes.forEach(remove => {
+        for (let i=remove[0]-1;i<remove[1];i++) {
+            field[i]--
+        }
+    });
+    cnt++
+}
+
+console.log(cnt);
