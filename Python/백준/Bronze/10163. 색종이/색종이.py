@@ -7,8 +7,7 @@ n = int(input())
 for k in range(n):
     x, y, w, h = map(int, input().split())
     for i in range(h):
-        for j in range(w):
-            board[y + i][x + j] = k + 1
+        board[y + i][x : x + w] = [k + 1] * w
 
 for i in range(n):
     cnt = 0
