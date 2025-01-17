@@ -4,11 +4,11 @@ input = sys.stdin.readline
 
 board = [[0 for _ in range(1001)] for _ in range(1001)]
 n = int(input())
-for _ in range(n):
+for k in range(n):
     x, y, w, h = map(int, input().split())
     for i in range(h):
         for j in range(w):
-            board[y + i][x + j] += 1
+            board[y + i][x + j] = k + 1
 
 for i in range(n):
     cnt = 0
